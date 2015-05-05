@@ -14,13 +14,13 @@ export default class RandomList extends Component {
   }
 
   shuffle (array) {
-    var currentIndex = array.length, temporaryValue, randomIndex ;
+    var currentIndex = array.length, temporaryValue, randomIndex
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
 
       // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
+      randomIndex = Math.floor(Math.random() * currentIndex)
       currentIndex -= 1;
 
       // And swap it with the current element.
@@ -35,13 +35,13 @@ export default class RandomList extends Component {
   getRandomList () {
     // get the passed in props
     let cell = this.props.cell
-    let cellContents = this.props.cellContents
-    this.shuffle(cellContents)
+    let cellProps = this.props.cellProps
+    this.shuffle(cellProps)
 
     // we may need the position, to determine if people we just pressing the first one
     let key = 0
 
-    const cellElement = cellContents.map((props)=>{
+    const cellElement = cellProps.map((props)=>{
       // React needs key and we need the position, but props.key is invisible to the subcomponent
       props.key = key
       props.position = key
@@ -62,4 +62,9 @@ export default class RandomList extends Component {
     </div>
       )
   }
+}
+
+RandomList.propTypes = {
+  cell: PropTypes.object.isRequired
+  , cellProps: PropTypes.element.isRequired
 }
