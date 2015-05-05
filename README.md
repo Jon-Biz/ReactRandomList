@@ -4,12 +4,17 @@ A ReactComponent list iterator that randomizes the order of the output. Takes a 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Install](#install)
 - [Usage](#usage)
+- [Props](#props)
+  - [`<React> cell` **Required**](#react-cell-required)
+  - [`<Array> cellProps` **Required**](#array-cellprops-required)
+- [Tests](#tests)
 - [Developing](#developing)
   - [Requirements](#requirements)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
