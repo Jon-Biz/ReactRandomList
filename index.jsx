@@ -1,35 +1,31 @@
 import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
+import _ from 'lodash'
 const {shouldComponentUpdate} = addons.PureRenderMixin
-const namespace = 'randomList'
+    , namespace = 'randomList'
 
 export default class RandomList extends Component {
-  constructor (props) {
-    super()
-    this.state = props
-  }
 
   shouldComponentUpdate (...args) {
     return shouldComponentUpdate.apply(this, args)
   }
 
   shuffle (array) {
-    var currentIndex = array.length, temporaryValue, randomIndex
+    let currentIndex = array.length, temporaryValue, randomIndex
 
     // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
+    while (currentIndex !== 0) {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex)
-      currentIndex -= 1;
+      currentIndex -= 1
 
       // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
     }
 
-    return array;
+    return array
   }
 
   getRandomList () {
@@ -54,17 +50,18 @@ export default class RandomList extends Component {
   }
 
   render () {
-    const getRandomList = this.getRandomList()
-
     return (
-    <div className={namespace}>
-      {this.getRandomList.bind(this)()}
+    <div>
+      props.position stays the same, while the order of the data changes:
+      <div className={namespace}>
+        {this.getRandomList.call(this)}
+      </div>
     </div>
       )
   }
 }
 
 RandomList.propTypes = {
-  cell: PropTypes.object.isRequired
-  , cellProps: PropTypes.element.isRequired
+  cell: PropTypes.func.isRequired
+  , cellProps: PropTypes.array.isRequired
 }
