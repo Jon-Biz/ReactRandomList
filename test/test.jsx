@@ -1,12 +1,12 @@
 var test = require('tape')
   , randomlist = require('../')
 
-test('randomlist#get', function getTest (t) {
+test('randomlist', function getTest (t) {
   t.plan(2)
 
-  t.doesNotThrow(
-    randomlist.get
-    , 'does not throw'
+  t.ok(
+    randomlist
+    , 'is a thing'
   )
 
   t.ok(
