@@ -1,9 +1,7 @@
-'use strict'
-
 var test = require('tape')
   , randomlist = require('../')
 
-test('randomlist#get', function getTest(t){
+test('randomlist#get', function getTest (t) {
   t.plan(2)
 
   t.doesNotThrow(

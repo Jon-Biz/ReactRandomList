@@ -3,11 +3,13 @@ import React from 'react'
 import {addons} from 'react/addons'
 import SupplierList from './index.jsx'
 const {TestUtils} = addons
-const {Simulate, renderIntoDocument, isElement, createRenderer} = TestUtils
+const {Simulate, renderIntoDocument, isElement} = TestUtils
 const getReactNode = (dom, node) => TestUtils.findRenderedDOMComponentWithTag(dom, node)
 const getDOMNode = (dom, node) => getReactNode(dom, node).getDOMNode()
-const getDOMNodes = (dom, type) => TestUtils.scryRenderedDOMComponentsWithTag(dom, type)
 const getDOMNodeText = (dom, node) => getDOMNode(dom, node).textContent
+
+//simulate is a thing
+Simulate
 
 test('SupplierList: constructor', (t) => {
   const supplierList = React.createElement(SupplierList)
