@@ -2,12 +2,13 @@ import React, {PropTypes, Component} from 'react'
 
 class Name extends Component{
   render () {
-    return <div>{this.state.position} : {this.props.name}</div>
+    return <div>{this.props.position} : {this.props.name}</div>
   }
 }
 
 Name.propTypes = {
     name: PropTypes.string.isRequired
+    , position: PropTypes.number.isRequired
   }
 
 export default {
