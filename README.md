@@ -52,7 +52,7 @@ _NOTE: you might need to `sudo ln -s /usr/local/bin/node /usr/bin/node` to ensur
 
 ## License
 
-Artistic 2.0 © [Jonathan]()
+Artistic 2.0 © [Jonathan El-Bizri]()
 
 
 [npm-url]: https://npmjs.org/package/@getable/randomlist
