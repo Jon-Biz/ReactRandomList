@@ -1,8 +1,8 @@
 import React, {PropTypes, Component} from 'react'
 
-class Name extends React.Component{
+class Name extends Component{
   render () {
-    return <div>{this.props.position} : {this.props.name}</div>
+    return <div>{this.state.position} : {this.props.name}</div>
   }
 }
 

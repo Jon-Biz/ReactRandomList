@@ -1,8 +1,7 @@
 import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
-import _ from 'lodash'
 const {shouldComponentUpdate} = addons.PureRenderMixin
-    , namespace = 'randomList'
+const namespace = 'randomList'
 
 export default class RandomList extends Component {
 
@@ -11,7 +10,9 @@ export default class RandomList extends Component {
   }
 
   shuffle (array) {
-    let currentIndex = array.length, temporaryValue, randomIndex
+    let currentIndex = array.length
+    let temporaryValue
+    let randomIndex
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
@@ -43,7 +44,6 @@ export default class RandomList extends Component {
       props.position = key
       key++
       return React.createElement(cell, props)
-
     }, this)
 
     return cellElement
