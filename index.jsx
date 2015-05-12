@@ -51,12 +51,9 @@ export default class RandomList extends Component {
 
   render () {
     return (
-    <div>
-      props.position stays the same, while the order of the data changes:
       <div className={namespace}>
         {this.getRandomList.call(this)}
       </div>
-    </div>
       )
   }
 }
